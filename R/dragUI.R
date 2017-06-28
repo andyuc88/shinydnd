@@ -10,8 +10,8 @@
 #'@import htmltools
 #'@export
 
-dragUI = function(id,..., style = NULL, class = "dragelement") {
-  dragUI = htmltools::tags$div(id = id, class = class, draggable = TRUE,
+dragUI = function(id,..., style = NULL, class = "dragelement",draggableSetting = TRUE) {
+  dragUI = htmltools::tags$div(id = id, class = class, draggable = draggableSetting,
            style = style, list(...))
   htmltools::attachDependencies(dragUI, shinyDNDDep)
 }
